@@ -75,6 +75,7 @@ public class JList2 extends javax.swing.JFrame {
         //取得 DefaultListModel 並且新增資料
         String value=jTextField1.getText();
         if(value!=null&&value.equals("")){
+            //上方為官方寫法，equals為判斷物件內容，非判斷物件記憶體位址。
             DefaultListModel model=(DefaultListModel)jList1.getModel();
             model.addElement(value);
             jList1.updateUI();
@@ -87,7 +88,9 @@ public class JList2 extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(jList1.getSelectedIndex()!=-1){
             //取得 DefaultListModel 並且刪除資料
-        
+            DefaultListModel model=(DefaultListModel)jList1.getModel();
+            model.remove(jList1.getSelectedIndex());
+            jList1.updateUI();
             //////////////////////////////////
         }
     }//GEN-LAST:event_jButton2ActionPerformed
