@@ -74,9 +74,12 @@ public class JList2 extends javax.swing.JFrame {
         // TODO add your handling code here:
         //取得 DefaultListModel 並且新增資料
         String value=jTextField1.getText();
-        DefaultListModel model=(DefaultListModel)jList1.getModel();
-        model.addElement(value);
-        jList1.updateUI();
+        if(value!=null&&value.equals("")){
+            DefaultListModel model=(DefaultListModel)jList1.getModel();
+            model.addElement(value);
+            jList1.updateUI();
+            jTextField1.setText("");
+        }
         //////////////////////////////////
     }//GEN-LAST:event_jButton1ActionPerformed
 
